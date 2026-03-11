@@ -45,10 +45,10 @@
             lengthBBox = new TextBox();
             label7 = new Label();
             label8 = new Label();
-            resultsBox1 = new TextBox();
+            resultsBoxX = new TextBox();
             label9 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            resultsBoxY = new TextBox();
+            resultsBoxZ = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -194,13 +194,13 @@
             label8.TabIndex = 17;
             label8.Text = "Length B";
             // 
-            // resultsBox1
+            // resultsBoxX
             // 
-            resultsBox1.Location = new Point(28, 191);
-            resultsBox1.Name = "resultsBox1";
-            resultsBox1.ReadOnly = true;
-            resultsBox1.Size = new Size(100, 23);
-            resultsBox1.TabIndex = 18;
+            resultsBoxX.Location = new Point(28, 191);
+            resultsBoxX.Name = "resultsBoxX";
+            resultsBoxX.ReadOnly = true;
+            resultsBoxX.Size = new Size(100, 23);
+            resultsBoxX.TabIndex = 18;
             // 
             // label9
             // 
@@ -211,31 +211,31 @@
             label9.TabIndex = 19;
             label9.Text = "Results";
             // 
-            // textBox1
+            // resultsBoxY
             // 
-            textBox1.Location = new Point(134, 191);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 20;
+            resultsBoxY.Location = new Point(134, 191);
+            resultsBoxY.Name = "resultsBoxY";
+            resultsBoxY.ReadOnly = true;
+            resultsBoxY.Size = new Size(100, 23);
+            resultsBoxY.TabIndex = 20;
             // 
-            // textBox2
+            // resultsBoxZ
             // 
-            textBox2.Location = new Point(240, 191);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 21;
+            resultsBoxZ.Location = new Point(240, 191);
+            resultsBoxZ.Name = "resultsBoxZ";
+            resultsBoxZ.ReadOnly = true;
+            resultsBoxZ.Size = new Size(100, 23);
+            resultsBoxZ.TabIndex = 21;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(530, 273);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(resultsBoxZ);
+            Controls.Add(resultsBoxY);
             Controls.Add(label9);
-            Controls.Add(resultsBox1);
+            Controls.Add(resultsBoxX);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(lengthBBox);
@@ -278,9 +278,9 @@
         private TextBox lengthBBox;
         private Label label7;
         private Label label8;
-        private TextBox resultsBox1;
+        private TextBox resultsBoxX;
         private Label label9;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox resultsBoxY;
+        private TextBox resultsBoxZ;
     }
 }
