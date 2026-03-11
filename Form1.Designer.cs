@@ -31,22 +31,24 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
+            a1X = new TextBox();
+            a2Y = new TextBox();
+            a3Z = new TextBox();
+            b1X = new TextBox();
+            b2Y = new TextBox();
+            b3Z = new TextBox();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            comboBox1 = new ComboBox();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
+            operationBox = new ComboBox();
+            lengthABox = new TextBox();
+            lengthBBox = new TextBox();
             label7 = new Label();
             label8 = new Label();
-            textBox9 = new TextBox();
+            resultsBox1 = new TextBox();
             label9 = new Label();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -76,47 +78,48 @@
             label3.TabIndex = 2;
             label3.Text = "a3";
             // 
-            // textBox1
+            // a1X
             // 
-            textBox1.Location = new Point(28, 60);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 4;
+            a1X.Location = new Point(28, 60);
+            a1X.Name = "a1X";
+            a1X.Size = new Size(100, 23);
+            a1X.TabIndex = 4;
             // 
-            // textBox2
+            // a2Y
             // 
-            textBox2.Location = new Point(134, 60);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 5;
+            a2Y.Location = new Point(134, 60);
+            a2Y.Name = "a2Y";
+            a2Y.Size = new Size(100, 23);
+            a2Y.TabIndex = 5;
             // 
-            // textBox3
+            // a3Z
             // 
-            textBox3.Location = new Point(240, 60);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 6;
+            a3Z.Location = new Point(240, 60);
+            a3Z.Name = "a3Z";
+            a3Z.Size = new Size(100, 23);
+            a3Z.TabIndex = 6;
             // 
-            // textBox4
+            // b1X
             // 
-            textBox4.Location = new Point(28, 122);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 7;
+            b1X.Location = new Point(28, 122);
+            b1X.Name = "b1X";
+            b1X.Size = new Size(100, 23);
+            b1X.TabIndex = 7;
             // 
-            // textBox5
+            // b2Y
             // 
-            textBox5.Location = new Point(134, 122);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
-            textBox5.TabIndex = 8;
+            b2Y.Location = new Point(134, 122);
+            b2Y.Name = "b2Y";
+            b2Y.Size = new Size(100, 23);
+            b2Y.TabIndex = 8;
             // 
-            // textBox6
+            // b3Z
             // 
-            textBox6.Location = new Point(240, 122);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 23);
-            textBox6.TabIndex = 9;
+            b3Z.Location = new Point(240, 122);
+            b3Z.Name = "b3Z";
+            b3Z.Size = new Size(100, 23);
+            b3Z.TabIndex = 9;
+            b3Z.TextChanged += textBox6_TextChanged;
             // 
             // label4
             // 
@@ -147,29 +150,30 @@
             label6.Text = "b3";
             label6.Click += label6_Click;
             // 
-            // comboBox1
+            // operationBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(371, 96);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 13;
+            operationBox.AutoCompleteCustomSource.AddRange(new string[] { "+", "-", "scalar", "Cross" });
+            operationBox.FormattingEnabled = true;
+            operationBox.Location = new Point(371, 96);
+            operationBox.Name = "operationBox";
+            operationBox.Size = new Size(121, 23);
+            operationBox.TabIndex = 13;
             // 
-            // textBox7
+            // lengthABox
             // 
-            textBox7.Location = new Point(371, 167);
-            textBox7.Name = "textBox7";
-            textBox7.ReadOnly = true;
-            textBox7.Size = new Size(100, 23);
-            textBox7.TabIndex = 14;
+            lengthABox.Location = new Point(371, 167);
+            lengthABox.Name = "lengthABox";
+            lengthABox.ReadOnly = true;
+            lengthABox.Size = new Size(100, 23);
+            lengthABox.TabIndex = 14;
             // 
-            // textBox8
+            // lengthBBox
             // 
-            textBox8.Location = new Point(371, 217);
-            textBox8.Name = "textBox8";
-            textBox8.ReadOnly = true;
-            textBox8.Size = new Size(100, 23);
-            textBox8.TabIndex = 15;
+            lengthBBox.Location = new Point(371, 217);
+            lengthBBox.Name = "lengthBBox";
+            lengthBBox.ReadOnly = true;
+            lengthBBox.Size = new Size(100, 23);
+            lengthBBox.TabIndex = 15;
             // 
             // label7
             // 
@@ -190,44 +194,62 @@
             label8.TabIndex = 17;
             label8.Text = "Length B";
             // 
-            // textBox9
+            // resultsBox1
             // 
-            textBox9.Location = new Point(28, 191);
-            textBox9.Name = "textBox9";
-            textBox9.ReadOnly = true;
-            textBox9.Size = new Size(312, 23);
-            textBox9.TabIndex = 18;
+            resultsBox1.Location = new Point(28, 191);
+            resultsBox1.Name = "resultsBox1";
+            resultsBox1.ReadOnly = true;
+            resultsBox1.Size = new Size(100, 23);
+            resultsBox1.TabIndex = 18;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(158, 167);
+            label9.Location = new Point(162, 167);
             label9.Name = "label9";
             label9.Size = new Size(44, 15);
             label9.TabIndex = 19;
             label9.Text = "Results";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(134, 191);
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 20;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(240, 191);
+            textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
+            textBox2.Size = new Size(100, 23);
+            textBox2.TabIndex = 21;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(530, 273);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
             Controls.Add(label9);
-            Controls.Add(textBox9);
+            Controls.Add(resultsBox1);
             Controls.Add(label8);
             Controls.Add(label7);
-            Controls.Add(textBox8);
-            Controls.Add(textBox7);
-            Controls.Add(comboBox1);
+            Controls.Add(lengthBBox);
+            Controls.Add(lengthABox);
+            Controls.Add(operationBox);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(b3Z);
+            Controls.Add(b2Y);
+            Controls.Add(b1X);
+            Controls.Add(a3Z);
+            Controls.Add(a2Y);
+            Controls.Add(a1X);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -242,21 +264,23 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
+        private TextBox a1X;
+        private TextBox a2Y;
+        private TextBox a3Z;
+        private TextBox b1X;
+        private TextBox b2Y;
+        private TextBox b3Z;
         private Label label4;
         private Label label5;
         private Label label6;
-        private ComboBox comboBox1;
-        private TextBox textBox7;
-        private TextBox textBox8;
+        private ComboBox operationBox;
+        private TextBox lengthABox;
+        private TextBox lengthBBox;
         private Label label7;
         private Label label8;
-        private TextBox textBox9;
+        private TextBox resultsBox1;
         private Label label9;
+        private TextBox textBox1;
+        private TextBox textBox2;
     }
 }
