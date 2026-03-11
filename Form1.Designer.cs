@@ -84,6 +84,7 @@
             a1X.Name = "a1X";
             a1X.Size = new Size(100, 23);
             a1X.TabIndex = 4;
+            a1X.TextChanged += a1X_TextChanged;
             // 
             // a2Y
             // 
@@ -91,6 +92,7 @@
             a2Y.Name = "a2Y";
             a2Y.Size = new Size(100, 23);
             a2Y.TabIndex = 5;
+            a2Y.TextChanged += a2Y_TextChanged;
             // 
             // a3Z
             // 
@@ -98,6 +100,7 @@
             a3Z.Name = "a3Z";
             a3Z.Size = new Size(100, 23);
             a3Z.TabIndex = 6;
+            a3Z.TextChanged += a3Z_TextChanged;
             // 
             // b1X
             // 
@@ -105,6 +108,7 @@
             b1X.Name = "b1X";
             b1X.Size = new Size(100, 23);
             b1X.TabIndex = 7;
+            b1X.TextChanged += b1X_TextChanged;
             // 
             // b2Y
             // 
@@ -112,6 +116,7 @@
             b2Y.Name = "b2Y";
             b2Y.Size = new Size(100, 23);
             b2Y.TabIndex = 8;
+            b2Y.TextChanged += b2Y_TextChanged;
             // 
             // b3Z
             // 
@@ -119,7 +124,7 @@
             b3Z.Name = "b3Z";
             b3Z.Size = new Size(100, 23);
             b3Z.TabIndex = 9;
-            b3Z.TextChanged += textBox6_TextChanged;
+            b3Z.TextChanged += b3Z_TextChanged;
             // 
             // label4
             // 
@@ -154,10 +159,12 @@
             // 
             operationBox.AutoCompleteCustomSource.AddRange(new string[] { "+", "-", "scalar", "Cross" });
             operationBox.FormattingEnabled = true;
+            operationBox.Items.AddRange(new object[] { "+", "-", "Scalar", "Cross" });
             operationBox.Location = new Point(371, 96);
             operationBox.Name = "operationBox";
             operationBox.Size = new Size(121, 23);
             operationBox.TabIndex = 13;
+            operationBox.SelectedIndexChanged += operationBox_SelectedIndexChanged;
             // 
             // lengthABox
             // 

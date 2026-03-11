@@ -22,10 +22,7 @@ namespace WinFormsApp1
 
         }
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
 
-        }
         private void Calculate()
         {
             try
@@ -34,14 +31,16 @@ namespace WinFormsApp1
                 var a2YValue = double.Parse(a2Y.Text);
                 var a3ZValue = double.Parse(a3Z.Text);
 
-                
+                var lengthA = Math.Sqrt((a1XValue * a1XValue) + (a2YValue * a2YValue) + (a3ZValue * a3ZValue));
+                lengthABox.Text = lengthA.ToString();
 
-                var b1XValue=double.Parse(b1X.Text);
-                var b2YValue=double.Parse(b2Y.Text);
-                var b3ZValue=double.Parse(b3Z.Text);
+                var b1XValue = double.Parse(b1X.Text);
+                var b2YValue = double.Parse(b2Y.Text);
+                var b3ZValue = double.Parse(b3Z.Text);
 
-                var lengthA = 0.0;
-                var lengthB = 0.0;
+                var lengthB = Math.Sqrt((b1XValue * b1XValue) + (b2YValue * b2YValue) + (b3ZValue * b3ZValue));
+                lengthBBox.Text = lengthB.ToString();
+
 
                 var xResult = 0.0;
                 var yResult = 0.0;
@@ -50,8 +49,8 @@ namespace WinFormsApp1
                 {
                     case "+":
                         xResult = a1XValue + b1XValue;
-                        yResult=a2YValue + b2YValue;
-                        zResult=a3ZValue + b3ZValue;
+                        yResult = a2YValue + b2YValue;
+                        zResult = a3ZValue + b3ZValue;
 
                         resultsBoxX.Text = xResult.ToString();
                         resultsBoxY.Text = yResult.ToString();
@@ -69,24 +68,21 @@ namespace WinFormsApp1
                         break;
                     case "Scalar":
                         xResult = a1XValue * b1XValue;
-                        yResult=a2YValue * b2YValue;
-                        zResult= a3ZValue * b3ZValue;
+                        yResult = a2YValue * b2YValue;
+                        zResult = a3ZValue * b3ZValue;
                         resultsBoxX.Text = (xResult + yResult + zResult).ToString();
                         break;
                     case "Cross":
-                        xResult = ((a2YValue * b3ZValue)-(a3ZValue*b2YValue));
-                        yResult = -1 * ((a1XValue * b3ZValue)-(a3ZValue*b1XValue));
+                        xResult = ((a2YValue * b3ZValue) - (a3ZValue * b2YValue));
+                        yResult = -1 * ((a1XValue * b3ZValue) - (a3ZValue * b1XValue));
                         zResult = ((a1XValue * b2YValue) - (a2YValue * b1XValue));
                         resultsBoxX.Text = xResult.ToString();
                         resultsBoxY.Text = yResult.ToString();
                         resultsBoxZ.Text = zResult.ToString();
                         break;
                 }
-                lengthA = Math.Sqrt((a1XValue * a1XValue) + (a2YValue * a2YValue) + (a3ZValue * a3ZValue));
-                lengthB = Math.Sqrt((b1XValue * b1XValue) + (b2YValue * b2YValue) + (b3ZValue * b3ZValue));
-                lengthABox.Text=lengthA.ToString();
-                lengthBBox.Text=lengthB.ToString();
                 
+
             }
             catch (FormatException)
             {
@@ -94,5 +90,39 @@ namespace WinFormsApp1
             }
         }
 
+        private void a1X_TextChanged(object sender, EventArgs e)
+        {
+            Calculate();
+        }
+
+        private void a2Y_TextChanged(object sender, EventArgs e)
+        {
+            Calculate();
+        }
+
+        private void a3Z_TextChanged(object sender, EventArgs e)
+        {
+            Calculate();
+        }
+
+        private void b1X_TextChanged(object sender, EventArgs e)
+        {
+            Calculate();
+        }
+
+        private void b2Y_TextChanged(object sender, EventArgs e)
+        {
+            Calculate();
+        }
+
+        private void b3Z_TextChanged(object sender, EventArgs e)
+        {
+            Calculate();
+        }
+
+        private void operationBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Calculate();
+        }
     }
 }
