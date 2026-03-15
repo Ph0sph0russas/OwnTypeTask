@@ -44,9 +44,6 @@ namespace WinFormsApp1
                 var lengthB = vectorB.CalculateVectorLength();
                 lengthBBox.Text = lengthB.ToString();
 
-                var xResult = 0.0;
-                var yResult = 0.0;
-                var zResult = 0.0;
                 Vector vectorResult;
                
                 switch (operationBox.Text)
