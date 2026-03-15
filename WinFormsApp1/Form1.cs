@@ -47,40 +47,25 @@ namespace WinFormsApp1
                 var xResult = 0.0;
                 var yResult = 0.0;
                 var zResult = 0.0;
+                Vector vectorResult;
+               
                 switch (operationBox.Text)
                 {
                     case "+":
-                        xResult = a1XValue + b1XValue;
-                        yResult = a2YValue + b2YValue;
-                        zResult = a3ZValue + b3ZValue;
-
-                        resultsBox.Text = xResult.ToString();
-                        resultsBoxY.Text = yResult.ToString();
-                        resultsBoxZ.Text = zResult.ToString();
-
+                        vectorResult = vectorA + vectorB;
+                        resultsBox.Text = vectorResult.OutputCoordinates();
                         break;
                     case "-":
-                        xResult = a1XValue - b1XValue;
-                        yResult = a2YValue - b2YValue;
-                        zResult = a3ZValue - b3ZValue;
-
-                        resultsBox.Text = xResult.ToString();
-                        resultsBoxY.Text = yResult.ToString();
-                        resultsBoxZ.Text = zResult.ToString();
+                        vectorResult= vectorA - vectorB;
+                        resultsBox.Text = vectorResult.OutputCoordinates();
                         break;
                     case "Scalar":
-                        xResult = a1XValue * b1XValue;
-                        yResult = a2YValue * b2YValue;
-                        zResult = a3ZValue * b3ZValue;
-                        resultsBox.Text = (xResult + yResult + zResult).ToString();
+                        double scalarResult = vectorA * vectorB;
+                        resultsBox.Text = scalarResult.ToString();
                         break;
                     case "Cross":
-                        xResult = ((a2YValue * b3ZValue) - (a3ZValue * b2YValue));
-                        yResult = -1 * ((a1XValue * b3ZValue) - (a3ZValue * b1XValue));
-                        zResult = ((a1XValue * b2YValue) - (a2YValue * b1XValue));
-                        resultsBox.Text = xResult.ToString();
-                        resultsBoxY.Text = yResult.ToString();
-                        resultsBoxZ.Text = zResult.ToString();
+                        vectorResult = vectorA & vectorB;
+                        resultsBox.Text = vectorResult.OutputCoordinates();
                         break;
                 }
                 

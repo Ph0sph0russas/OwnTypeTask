@@ -49,7 +49,7 @@ namespace WinFormsApp1
             var resultVector = new Vector(xResult, yResult, zResult);
             return resultVector;
         }
-        public string OutputCoordinates(String operation)
+        public string OutputCoordinates()
         {
             return String.Format("[{0};{1};{2}]", this.x, this.y, this.z);
         }
