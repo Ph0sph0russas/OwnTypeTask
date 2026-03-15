@@ -9,31 +9,37 @@ using System.Threading.Tasks;
 namespace WinFormsApp1.Tests
 {
     [TestClass()]
-    public class OwnTypeTaskTests
+    public class VectorTests
     {
         [TestMethod()]
-        public void OwnTypeTaskTest()
+        public void VectorTest()
         {
             Assert.Fail();
         }
 
         [TestMethod()]
-        public void getXTest()
+        public void operatorPlusTest()
         {
             Assert.Fail();
         }
 
         [TestMethod()]
-        public void getYTest()
+        public void operatorMinusTest()
         {
             Assert.Fail();
         }
 
         [TestMethod()]
-        public void getZTest()
+        public void operatorScalarTest()
         {
             Assert.Fail();
         }
+        [TestMethod()]
+        public void operatorCrossTest()
+        {
+            Assert.Fail();
+        }
+
 
         [TestMethod()]
         public void CalculateVectorLengthTest()

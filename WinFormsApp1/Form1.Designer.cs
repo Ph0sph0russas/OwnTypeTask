@@ -45,10 +45,8 @@
             lengthBBox = new TextBox();
             label7 = new Label();
             label8 = new Label();
-            resultsBoxX = new TextBox();
+            resultsBox = new TextBox();
             label9 = new Label();
-            resultsBoxY = new TextBox();
-            resultsBoxZ = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -201,13 +199,13 @@
             label8.TabIndex = 17;
             label8.Text = "Length B";
             // 
-            // resultsBoxX
+            // resultsBox
             // 
-            resultsBoxX.Location = new Point(28, 191);
-            resultsBoxX.Name = "resultsBoxX";
-            resultsBoxX.ReadOnly = true;
-            resultsBoxX.Size = new Size(100, 23);
-            resultsBoxX.TabIndex = 18;
+            resultsBox.Location = new Point(28, 191);
+            resultsBox.Name = "resultsBox";
+            resultsBox.ReadOnly = true;
+            resultsBox.Size = new Size(312, 23);
+            resultsBox.TabIndex = 18;
             // 
             // label9
             // 
@@ -218,31 +216,13 @@
             label9.TabIndex = 19;
             label9.Text = "Results";
             // 
-            // resultsBoxY
-            // 
-            resultsBoxY.Location = new Point(134, 191);
-            resultsBoxY.Name = "resultsBoxY";
-            resultsBoxY.ReadOnly = true;
-            resultsBoxY.Size = new Size(100, 23);
-            resultsBoxY.TabIndex = 20;
-            // 
-            // resultsBoxZ
-            // 
-            resultsBoxZ.Location = new Point(240, 191);
-            resultsBoxZ.Name = "resultsBoxZ";
-            resultsBoxZ.ReadOnly = true;
-            resultsBoxZ.Size = new Size(100, 23);
-            resultsBoxZ.TabIndex = 21;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(530, 273);
-            Controls.Add(resultsBoxZ);
-            Controls.Add(resultsBoxY);
             Controls.Add(label9);
-            Controls.Add(resultsBoxX);
+            Controls.Add(resultsBox);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(lengthBBox);
@@ -285,9 +265,7 @@
         private TextBox lengthBBox;
         private Label label7;
         private Label label8;
-        private TextBox resultsBoxX;
+        private TextBox resultsBox;
         private Label label9;
-        private TextBox resultsBoxY;
-        private TextBox resultsBoxZ;
     }
 }

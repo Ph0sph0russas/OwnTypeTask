@@ -1,3 +1,4 @@
+
 namespace WinFormsApp1
 {
     public partial class Form1 : Form
@@ -30,17 +31,18 @@ namespace WinFormsApp1
                 var a1XValue = double.Parse(a1X.Text);
                 var a2YValue = double.Parse(a2Y.Text);
                 var a3ZValue = double.Parse(a3Z.Text);
+                var vectorA= new Vector(a1XValue, a2YValue, a3ZValue);
 
-                var lengthA = Math.Sqrt((a1XValue * a1XValue) + (a2YValue * a2YValue) + (a3ZValue * a3ZValue));
+                var lengthA = vectorA.CalculateVectorLength();
                 lengthABox.Text = lengthA.ToString();
 
                 var b1XValue = double.Parse(b1X.Text);
                 var b2YValue = double.Parse(b2Y.Text);
                 var b3ZValue = double.Parse(b3Z.Text);
+                var vectorB=new Vector(b1XValue, b2YValue, b3ZValue);
 
-                var lengthB = Math.Sqrt((b1XValue * b1XValue) + (b2YValue * b2YValue) + (b3ZValue * b3ZValue));
+                var lengthB = vectorB.CalculateVectorLength();
                 lengthBBox.Text = lengthB.ToString();
-
 
                 var xResult = 0.0;
                 var yResult = 0.0;
@@ -52,7 +54,7 @@ namespace WinFormsApp1
                         yResult = a2YValue + b2YValue;
                         zResult = a3ZValue + b3ZValue;
 
-                        resultsBoxX.Text = xResult.ToString();
+                        resultsBox.Text = xResult.ToString();
                         resultsBoxY.Text = yResult.ToString();
                         resultsBoxZ.Text = zResult.ToString();
 
@@ -62,7 +64,7 @@ namespace WinFormsApp1
                         yResult = a2YValue - b2YValue;
                         zResult = a3ZValue - b3ZValue;
 
-                        resultsBoxX.Text = xResult.ToString();
+                        resultsBox.Text = xResult.ToString();
                         resultsBoxY.Text = yResult.ToString();
                         resultsBoxZ.Text = zResult.ToString();
                         break;
@@ -70,13 +72,13 @@ namespace WinFormsApp1
                         xResult = a1XValue * b1XValue;
                         yResult = a2YValue * b2YValue;
                         zResult = a3ZValue * b3ZValue;
-                        resultsBoxX.Text = (xResult + yResult + zResult).ToString();
+                        resultsBox.Text = (xResult + yResult + zResult).ToString();
                         break;
                     case "Cross":
                         xResult = ((a2YValue * b3ZValue) - (a3ZValue * b2YValue));
                         yResult = -1 * ((a1XValue * b3ZValue) - (a3ZValue * b1XValue));
                         zResult = ((a1XValue * b2YValue) - (a2YValue * b1XValue));
-                        resultsBoxX.Text = xResult.ToString();
+                        resultsBox.Text = xResult.ToString();
                         resultsBoxY.Text = yResult.ToString();
                         resultsBoxZ.Text = zResult.ToString();
                         break;
