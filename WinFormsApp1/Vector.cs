@@ -14,6 +14,19 @@ namespace WinFormsApp1
         private double x;
         private double y;
         private double z;
+        public override bool Equals(object? obj)
+        {
+            var vector = obj as Vector;
+            if (vector==null)
+            {
+                return false;
+            }
+            return (this.x==vector.x && this.y==vector.y && this.z==vector.z);
+        }
+        public override string ToString()
+        {
+            return $"({this.x},{this.y},{this.z})";
+        }
         public Vector(double x, double y, double z)
         {
             this.x = x;
@@ -48,10 +61,6 @@ namespace WinFormsApp1
             var zResult = ((a.x * b.y) - (a.y * b.x));
             var resultVector = new Vector(xResult, yResult, zResult);
             return resultVector;
-        }
-        public string OutputCoordinates()
-        {
-            return String.Format("[{0};{1};{2}]", this.x, this.y, this.z);
         }
         public double CalculateVectorLength()
         {

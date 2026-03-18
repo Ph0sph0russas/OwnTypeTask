@@ -50,11 +50,11 @@ namespace WinFormsApp1
                 {
                     case "+":
                         vectorResult = vectorA + vectorB;
-                        resultsBox.Text = vectorResult.OutputCoordinates();
+                        resultsBox.Text = vectorResult.ToString();
                         break;
                     case "-":
-                        vectorResult= vectorA - vectorB;
-                        resultsBox.Text = vectorResult.OutputCoordinates();
+                        vectorResult = vectorA - vectorB;
+                        resultsBox.Text = vectorResult.ToString();
                         break;
                     case "Scalar":
                         double scalarResult = vectorA * vectorB;
@@ -62,7 +62,7 @@ namespace WinFormsApp1
                         break;
                     case "Cross":
                         vectorResult = vectorA & vectorB;
-                        resultsBox.Text = vectorResult.OutputCoordinates();
+                        resultsBox.Text = vectorResult.ToString();
                         break;
                 }
                 
